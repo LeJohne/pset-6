@@ -38,3 +38,7 @@
   background: url("../images/home1.jpg") no-repeat center center fixed;
   background-size: cover;
 }
+
+#homepage {
+  background: url("../images/homebackground.gif") no-repeat center center fixed;
+}
