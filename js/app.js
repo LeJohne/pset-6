@@ -6,8 +6,31 @@ const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
 const LINE_THROUGH = "lineThrough";
 
-let LIST = []
-    , id = 0;
+let LIST, id;
+
+//localstorage Retrieve
+let data = localStorage.getItem("TODO");
+
+if(data){
+    LIST = JSON.parse(data);
+    id = LIST.length;
+    loadList(LIST);
+}else{
+  LIST = [];
+  id = 0;
+}
+
+function loadList(array){
+  array.forEach(function(item){
+    addToDo(item.name, item.id, item.done, item.trash)
+  });
+}
+
+//Localstorage remove
+clear.addEventListener("click",function(){
+  localStorage.clear();
+  location.reload();
+});
 
 //To Do Function
 
@@ -35,15 +58,15 @@ document.addEventListener("keyup", function(even){
 
     //Checks input isn't empty
     if (toDo) {
-      addToDo(toDo);
+      addToDo(toDo, id, false, false);
 
       LIST.push({
-        name : toDo?
+        name : toDo,
         id : id,
         done : false,
         trash : false
       });
-
+      localStorage.setItem("TODO", JSON.stringify(LIST));
       id++;
     }
     input.value = "";
@@ -56,7 +79,7 @@ function completeToDo(element){
   element.classList.toggle(UNCHECK);
   element.parentNode.querySelector(".text").classList.toggle(LINE_THROUGH);
 
-  LIST[element.id].done = LIST [element.id].done ? false : true;
+  LIST[element.id].done = LIST[element.id].done ? false : true;
 }
 
 //Remove Function
@@ -73,7 +96,8 @@ list.addEventListener("click", function(event){
   const elementJob = element.attributes.job.value;
   if(elementJob == "complete"){
     completeToDo(element);
-  }else if(elementJob == "remove"){
+  }else if(elementJob == "delete"){
     removeToDo(element);
   }
+  localStorage.setItem("TODO", JSON.stringify(LIST));
 });
