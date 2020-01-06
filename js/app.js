@@ -48,7 +48,7 @@ function addToDo(toDo, id, done, trash){
                 <i class="fa ${DONE} co" job="complete" id= "${id}"></i>
                 <p class="text ${LINE}">${toDo}</p>
                 <i class="fa ${PRIOR} po" job="priority" id="${id}"></i>
-                <i class="fa fa-trash-o de" job="delete" id="${id}"</i>
+                <i class="fa fa-trash-o de" job="delete" id="${id}"></i>
                 </li>`;
   const position = "beforeend";
 
@@ -98,10 +98,14 @@ function removeToDo(element){
 function priorityToDo(element){
   element.classList.toggle(NORMAL);
   element.classList.toggle(PRIORITY);
-  element.parentNode.querySelector(".text").classList.toggle()
-
-  LIST[element.id].priority = LIST[element.id].priority ? false : true
 }
+
+//function priority(element){
+//  var index = element.getAttribute("id")
+//  var todo = LIST
+//}
+
+
 
 //Target Complete & Trash function
 
@@ -114,10 +118,8 @@ list.addEventListener("click", function(event){
   }else if(elementJob == "delete"){
     removeToDo(element);
   }else if(elementJob == "priority"){
-    priorityToDo(element);
+    priorityToDo(element); priority(element)
   }
 
   localStorage.setItem("TODO", JSON.stringify(LIST));
 });
-
-//Target Priority Functions
