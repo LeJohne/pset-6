@@ -84,8 +84,8 @@ body{
 }
 .item p.text{
     position: absolute;
-    padding:0;
-    margin:0;
+    padding:0px;
+    margin:0px;
     font-size: 20px;
     left:50px;
     top:5px;
@@ -107,11 +107,10 @@ body{
     cursor: pointer;
 }
 
-/*
 .item i.po{
   position: absolute;
   font-size: 25px;
-  padding-left: 20px
+  padding-right: 40px;
   right: 10px;
   top: 10px;
 }
@@ -119,7 +118,7 @@ body{
 .item i.po:hover{
     color:#af0000;
     cursor: pointer;
-} */
+}
 
 .add-to-do{
     position: relative;
