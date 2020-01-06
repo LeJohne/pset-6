@@ -4,6 +4,8 @@ const input = document.getElementById("input");
 
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
+const NORMAL = "fa-exclamation"
+const PRIORITY = "fa-exclamation-circle"
 const LINE_THROUGH = "lineThrough";
 
 let LIST, id;
@@ -40,11 +42,13 @@ function addToDo(toDo, id, done, trash){
 
   const DONE = done ? CHECK : UNCHECK;
   const LINE = done ? LINE_THROUGH : "";
+  const PRIOR = done ? PRIORITY : NORMAL;
 
   const item = `<li class="item">
                 <i class="fa ${DONE} co" job="complete" id= "${id}"></i>
                 <p class="text ${LINE}">${toDo}</p>
-                <i class="fa fa-trash-o delete" job="delete" id="${id}"</i>
+                <i class="fa ${PRIOR} po" job="priority" id="${id}"</i>
+                <i class="fa fa-trash-o de" job="delete" id="${id}"</i>
                 </li>`;
   const position = "beforeend";
 
@@ -58,13 +62,14 @@ document.addEventListener("keyup", function(even){
 
     //Checks input isn't empty
     if (toDo) {
-      addToDo(toDo, id, false, false);
+      addToDo(toDo, id, false, false, false);
 
       LIST.push({
         name : toDo,
         id : id,
         done : false,
-        trash : false
+        trash : false,
+        priority : false
       });
       localStorage.setItem("TODO", JSON.stringify(LIST));
       id++;
@@ -89,15 +94,30 @@ function removeToDo(element){
   LIST[element.id].trash = true;
 }
 
-//Target function
+//Priority function
+function priorityToDo(element){
+  element.classList.toggle(NORMAL);
+  element.classList.toggle(PRIORITY);
+  element.parentNode.querySelector(".text").classList.toggle()
+
+  LIST[element.id].priority = LIST[element.id].priority ? false : true
+}
+
+//Target Complete & Trash function
 
 list.addEventListener("click", function(event){
   const element = event.target;
   const elementJob = element.attributes.job.value;
+
   if(elementJob == "complete"){
     completeToDo(element);
   }else if(elementJob == "delete"){
     removeToDo(element);
+  }else if(elementJob == "priority"){
+    priorityToDo(element);
   }
+
   localStorage.setItem("TODO", JSON.stringify(LIST));
 });
+
+//Target Priority Functions

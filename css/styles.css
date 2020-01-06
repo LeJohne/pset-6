@@ -1,248 +1,152 @@
-body {
-  padding: 0;
-  margin: 0;
-  background-color: rgba(0,0,0,0.1);
-  font-family: 'Titillium Web', sans-serif;
+body{
+    padding: 0;
+    margin: 0;
+    background-color: rgba(0,0,0,0.1);
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .container{
-  padding: 100px;
-  width: 380px;
-  margin: 0 auto;
+    padding:10px;
+    width:380px;
+    margin:0 auto;
 }
 
 .header{
-  width: 380px;
-  height: 200px;
-  background-image: url("../images/home1.jpg");
-  background-size: 100% 200%;
-  background-repeat: no-repeat;
-  border-radius: 15px 15px 0 0;
-  position: relative;
+    width: 380px;
+    height:200px;
+    background-image: url('../images/home1.jpg');
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    border-radius: 15px 15px 0 0;
+    position: relative;
 }
-
 .clear{
-  width: 30px;
-  height: 30px;
-  position: absolute;
-  right: 20px;
-  top: 20px;
+    width : 30px;
+    height: 30px;
+    position: absolute;
+    right:20px;
+    top: 20px;
 }
-
 .clear i{
-  font-size: 30px;
-  color: #FFF
+    font-size: 30px;
+    color: #FFF;
 }
-
 .clear i:hover{
-  cursor: pointer;
-  text-shadow: 1px 3px 5px #000;
-  text-transform: rotate(45deg);
+    cursor: pointer;
+    text-shadow: 1px 3px 5px #000;
+    transform: rotate(45deg);
 }
-
 #title{
-  position:absolute;
-  bottom: 10px;
-  left: 10px;
-  color: #FFF;
-  font-size: 25px;
-  font-family: 'Titillium Web', sans-serif;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    color: #FFF;
+    font-size: 30px;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 .content{
-  width: 300px;
-  height: 350px;
-  max-height: 350px;
-  background-color: #FFF;
-  overflow: auto;
+    width:380px;
+    height: 350px;
+    max-height:350px;
+    background-color: #FFF;
+    overflow: auto;
 }
-
-.content::-webkit-scrollbar{
-  display: none;
+.content::-webkit-scrollbar {
+    display: none;
 }
-
 .content ul{
-  padding: 0;
-  margin: 0;
+    padding:0;
+    margin:0;
 }
-
 .item{
-  width: 380px;
-  height: 45px;
-  min-height: 45px;
-  position: relative;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
-  list-style: none;
-  padding: 0;
-  margin: 0;
+    width:380px;
+    height: 45px;
+    min-height: 45px;
+    position: relative;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
-
 .item i.co{
-  position: absolute;
-  font-size: 25px;
-  padding-left: 5px;
-  left: 15px;
-  top: 10px;
+    position: absolute;
+    font-size: 25px;
+    padding-left:5px;
+    left:15px;
+    top:10px;
 }
-
 .item i.co:hover{
-  cursor: pointer;
+    cursor: pointer;
 }
-
 .fa-check-circle{
-  color: #6eb200;
+    color:#6eb200;
 }
-
 .item p.text{
-  position: absolute;
-  padding: 0px;
-  margin: 0px;
-  font-size: 20px;
-  left: 50px;
-  top: 5px;
-  background-color: #FFF;
-  max-width: 285px;
+    position: absolute;
+    padding:0;
+    margin:0;
+    font-size: 20px;
+    left:50px;
+    top:5px;
+    background-color: #FFF;
+    max-width:285px;
 }
-
 .lineThrough{
-  text-decoration: line-through;
-  color: #ccc;
+    text-decoration: line-through;
+    color : #ccc;
+}
+.item i.de{
+    position: absolute;
+    font-size: 25px;
+    right:15px;
+    top:10px;
+}
+.item i.de:hover{
+    color:#af0000;
+    cursor: pointer;
 }
 
-.item i.de{
+/*
+.item i.po{
   position: absolute;
   font-size: 25px;
-  right: 15px;
+  padding-left: 20px
+  right: 10px;
   top: 10px;
 }
 
-.item i.de.hover{
-  color: #af0000;
-  cursor: pointer;
-}
+.item i.po:hover{
+    color:#af0000;
+    cursor: pointer;
+} */
 
 .add-to-do{
-  position: relative;
-  width: 360px;
-  height: 40px;
-  background-color: #FFF;
-  padding: 10px;
-  border-top: 1px solid rgba(0,0,0,0.1)
+    position: relative;
+    width: 360px;
+    height:40px;
+    background-color: #FFF;
+    padding: 10px;
+    border-top: 1px solid rgba(0,0,0,0.1);
 }
-
 .add-to-do i{
-  position: absolute;
-  font-size: 40px;
-  color: #4162f6
+    position: absolute;
+    font-size: 40px;
+    color: #4162f6;
 }
 
 .add-to-do input{
-  position: absolute;
-  left: 50px;
-  height: 35px;
-  width: 310px;
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  padding-left: 10px;
+    position: absolute;
+    left: 50px;
+    height: 35px;
+    width: 310px;
+    background-color: transparent;
+    border: none;
+    font-size: 20px;
+    padding-left:10px;
 }
-
-.add-to-do input::-webkit-input-placeholder{
-  color: #4162f2;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 20px;
+.add-to-do input::-webkit-input-placeholder {
+    color: #4162f6;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 20px;
 }
-
-
-
-
-
-
-
-/*
-.nav ul {
-  list-style: none;
-  background: #000000;
-  text-align: center;
-  padding: 0: margin:0;
-}
-
-.nav li {
-  display: inline-block;
-}
-
-.nav a {
-  text-decoration: none;
-  color: #fff;
-  width: 100px;
-  display: block;
-  padding: 15px;
-  font-size: 17px;
-  font-family: Helvetic;
-  background: #000000;
-}
-
-.nav a:hover {
-  background: #999;
-  transition: 0.4s;
-}
-
-/* search field */ /*
-form.enter input[type=text]{
-  padding: 10px;
-  font-size: 15px;
-  border: 1px solid grey;
-  float: right;
-  width: 60%;
-  background: #f1f1f1;
-}
-
-/* Submit button */ /*
-form.enter button{
-  float: right;
-  width: 20%;
-  padding: 10px;
-  background: #2196F3;
-  color: white;
-  font-size: 17px;
-  border: 1px solid grey;
-  border-left: none;
-  cursor: pointer;
-}
-
-/*
-form.enter button:hover {
-  background: #0b7dda;
-}
-
-form.enter : : after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-.box {
-  width: auto;
-  height: 500px;
-  padding: 0px;
-  margin: 0px auto;
-  box-shadow: 0px 0px 10px 2px grey;
-  background: url("../images/homebackground.gif") no-repeat center center fixed;
-  background-size: cover;
-}
-
-#title mark {
-  font-size: 40px;
-  padding: 5px;
-}
-
-.box mark {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: white;
-  padding: 1px;
-}
-
-#homepage {
-  background: url("../images/homebackground.gif") no-repeat center center fixed;
-}
-*/
