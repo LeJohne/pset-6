@@ -102,7 +102,7 @@ function priorityToDo(element) {
     elementParent = element.parentNode;
 
     removeToDo(element);
-
+//Toggles the priority Icon
     element.classList.toggle(NORMAL);
     element.classList.toggle(PRIORITY);
 
