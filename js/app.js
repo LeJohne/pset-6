@@ -111,7 +111,7 @@ function priorityToDo(element) {
     } else if (element.classList.contains(NORMAL)) {
         list.append(elementParent);
     } else {
-
+      //meant to be empty
     }
   };
 
