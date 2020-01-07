@@ -105,7 +105,7 @@ function priorityToDo(element) {
 //Toggles the priority Icon
     element.classList.toggle(NORMAL);
     element.classList.toggle(PRIORITY);
-
+//Functions that activate if it's a priority or not
     if (element.classList.contains(PRIORITY)) {
         list.prepend(elementParent);
     } else if (element.classList.contains(NORMAL)) {
