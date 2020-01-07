@@ -97,30 +97,6 @@ function removeToDo(element){
 
 // Priority function
 
-// function priorityToDo(element){
-//   element = event.target
-//   element.classList.toggle(NORMAL);
-//   element.classList.toggle(PRIORITY);
-//   let a = list.item
-//
-//   element.parentNode.parentNode.removeChild(element.parentNode);
-//
-//   LIST[element.id].trash = true;
-//   list.item
-
-
-//   if (element.classList.contains(NORMAL){
-//      List.prepend(element);
-//   }else if (element.classList.contains(PRIORITY)){
-//     List.append(element);
-//   }else {}
-// }
-
-// function priority(element){
-// var index = element.getAttribute("id")
-// var todo = LIST
-// }
-
 function priorityToDo(element) {
     element = event.target;
     elementParent = element.parentNode;
