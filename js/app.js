@@ -115,7 +115,7 @@ function priorityToDo(element) {
     }
   };
 
-//commit
+
 //Target Complete & Trash function
 
 list.addEventListener("click", function(event){
