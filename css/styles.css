@@ -120,6 +120,10 @@ body{
     cursor: pointer;
 }
 
+.item i.fa-exclamation-circle.po{
+  color: #af0000
+}
+
 .add-to-do{
     position: relative;
     width: 360px;

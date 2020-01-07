@@ -4,9 +4,10 @@ const input = document.getElementById("input");
 
 const CHECK = "fa-check-circle";
 const UNCHECK = "fa-circle-thin";
-const NORMAL = "fa-exclamation"
-const PRIORITY = "fa-exclamation-circle"
+const NORMAL = "fa-exclamation";
+const PRIORITY = "fa-exclamation-circle";
 const LINE_THROUGH = "lineThrough";
+let elementParent;
 
 let LIST, id;
 
@@ -94,17 +95,49 @@ function removeToDo(element){
   LIST[element.id].trash = true;
 }
 
-//Priority function
-function priorityToDo(element){
-  element.classList.toggle(NORMAL);
-  element.classList.toggle(PRIORITY);
-}
+// Priority function
 
-//function priority(element){
-//  var index = element.getAttribute("id")
-//  var todo = LIST
-//}
+// function priorityToDo(element){
+//   element = event.target
+//   element.classList.toggle(NORMAL);
+//   element.classList.toggle(PRIORITY);
+//   let a = list.item
+//
+//   element.parentNode.parentNode.removeChild(element.parentNode);
+//
+//   LIST[element.id].trash = true;
+//   list.item
 
+
+//   if (element.classList.contains(NORMAL){
+//      List.prepend(element);
+//   }else if (element.classList.contains(PRIORITY)){
+//     List.append(element);
+//   }else {}
+// }
+
+// function priority(element){
+// var index = element.getAttribute("id")
+// var todo = LIST
+// }
+
+function priorityToDo(element) {
+    element = event.target;
+    elementParent = element.parentNode;
+
+    removeToDo(element);
+
+    element.classList.toggle(NORMAL);
+    element.classList.toggle(PRIORITY);
+
+    if (element.classList.contains(PRIORITY)) {
+        list.prepend(elementParent);
+    } else if (element.classList.contains(NORMAL)) {
+        list.append(elementParent);
+    } else {
+
+    }
+  };
 
 
 //Target Complete & Trash function
@@ -118,7 +151,7 @@ list.addEventListener("click", function(event){
   }else if(elementJob == "delete"){
     removeToDo(element);
   }else if(elementJob == "priority"){
-    priorityToDo(element); priority(element)
+    priorityToDo(element);
   }
 
   localStorage.setItem("TODO", JSON.stringify(LIST));
